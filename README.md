@@ -11,4 +11,4 @@ Padrão requisição: {senha: [senha a validar]}
 
 resposta: {sucesso: [1 | 0], mensagem: [valida, invalida]}
 
-criterios de senha válida ou inváida
+criterios de senha válida ou inválida
