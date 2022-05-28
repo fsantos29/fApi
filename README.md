@@ -18,9 +18,17 @@ Depois pode baixar no insommia e/ou terminal para rodar o prj.
 Api para validação de senha
 
 Para executar o prj após clonar 
-Instalar as dependências e rodar via o servidor embarcado do eclipe com api em execução temos as seguintes rotas: http:\\localhost:8080/api obter a versão da aplicação http:\\localhost:8080/api/validarSenha  uma senha passada via Json
+
+Instalar as dependências e rodar via o servidor embarcado do eclipe 
+
+com api em execução temos as seguintes rotas: http:\\localhost:8080/api 
+
+obter a versão da aplicação http:\\localhost:8080/api/validarSenha  
+
+uma senha passada via Json
 
 Padrão requisição:{senha:[senha a validar]}
+
 Resposta:{sucesso:[1/0], mensagem: [valida, inválida]}
 
 Critérios de senha válida ou inválida
