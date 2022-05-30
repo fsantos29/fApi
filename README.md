@@ -1,59 +1,61 @@
 "# fApi" 
-A instalação do prj será feita da seguinte forma:
 
-- Ide eclipse
+# fApi
+API para validação de senhas.
 
--Java JDK
-
--Spring boot
-
--Maven generate sources
-
--Insommia
-
-No prompt digita: Java -version
-
--extrai a f_api => file =>import=>general=>projects from folder or archive=> procura a pasta com o arquivo=>clica em directory=> finish
-
-Para instalar a spring boot vai no ícone help => eclipse markeplace => busca a spring tools 4.14.1 realese e faz a instalação.
-
-Vai na f_api e clica no botão direito e vai para =>run as=>clica na maven generate sources
-
-Depois vai no item local expande a f-api, clica botão esquerdo e vai na aba (re)start para iniciar o serviço da api (f-api [:8080])
-
-Depois digita no navegador localhost:8080 para abrir a api
-
-A próxima rota é http://localhost:8080/api/validarSenha
-
-Expande a f_api
-
-Depois pode baixar no insommia e/ou terminal para rodar o prj.
-
-Api para validação de senha
-
-Para executar o prj após clonar 
-
-Instalar as dependências e rodar via o servidor embarcado do eclipe 
-
-com api em execução temos as seguintes rotas: http:\\localhost:8080/api 
-
-obter a versão da aplicação http:\\localhost:8080/api/validarSenha  
-
-uma senha passada via Json
-
-Padrão requisição:{senha:[senha a validar]}
-
-Resposta:{sucesso:[1/0], mensagem: [valida, inválida]}
-
-Critérios de senha válida ou inválida
+#### Critérios de senha válida ou inválida
 - considere uma senha sendo válida quando a mesma possuir as seguintes definições:
 - Nove ou mais caracteres
 - Ao menos 1 dígito
 - Ao menos 1 letra minúscula
-- Ao menos 1 letra maiscula
+- Ao menos 1 letra maiúscula
 - Ao menos 1 caractere especial
 --- considere como especial os seguintes caracteres: !@#$%^&*() -+
-
 - Não possuir caracteres repetidos dentro do conjunto.
+
+### Requisitos do Projeto / API:
+- Java JDK
+- Marven
+- IDE Eclipse
+- Plugin Spring Book Tools para Eclipse.
+
+#### Para executar o projeto:
+
+ 1. Baixar ou clonar o código do projeto;
+ 2. Importar o projeto em sua IDE;
+ 3. Instalar as dependências via Marven;
+ 4. Executar o projeto via servidor embarcado do Eclipe/SpringBoot Tools.
+	 4.1 Expandir o projeto e iniciar o serviço
+	 4.2 A execução pode ser confirmada pelo console do Eclipse, por padrão sua api deve rodar no endereço: localhost:8080
+
+### Rotas da API:
+1. /api
+	Vai retornar uma string com as informações da atual versão da API.
+2. /api/validarSenha
+	Espera receber um objeto JSON contendo a senha a ser validada.
+	`{"senha":"Senha123!"}`
+	Devolve um objeto JSON com o resultado da validação.
+	`{"sucesso":"1", "mensagem":"Valida"}`
+
+
+#### Sugestões para testar as requisições à API.
+
+##### CURL
+Podemos realizar o teste por meio do curl que pode ser executado via terminal Linux ou CMD no Windows.
+
+Abaixo um exemplo de requisição.
+
+    curl -X POST -H "Content-Type: application/json" -d "{\"senha\":\"teste\"}" http://localhost:8080/api/validaSenha
+
+##### INSOMINIA
+Software que permite que criemos as requisições através de sua interface de forma simples e intuitiva.
+
+Exemplo de requisição:
+
+Criar nova requisição > Selecionar o método Post > Definir a URL: http://localhost:8080/api/validaSenha > Definir o conteúdo como JSON > inserir o seguinte conteúdo: 
+
+    {"senha":"T1234gyupopvn"}
+
+
 
 
